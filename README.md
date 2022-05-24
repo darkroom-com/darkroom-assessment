@@ -44,4 +44,8 @@ The button should have the following behavior:
 * Once you are satisfied with your solution, push it to git and create a pull request.
 
 
+This is what it could look like when complete:
+![Screen Shot 2022-05-24 at 12 00 10](https://user-images.githubusercontent.com/14261469/170017821-aec8482f-4947-4cff-b5f7-528cd7e02da0.png)
+
+
 Good luck!
