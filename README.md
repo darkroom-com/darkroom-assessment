@@ -1,24 +1,47 @@
-# README
+# Darkroom Assessment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Setup
 
-Things you may want to cover:
+Requirements:
+`ruby 3.1.2`
+`rails 7.0.3`
 
-* Ruby version
+Make sure you have:
 
-* System dependencies
+```
+# update rails:
+gem update rails
 
-* Configuration
+# update bundler:
+gem update bundler
 
-* Database creation
+# clone branch to your local machine
 
-* Database initialization
+# bundle
+bundle install
 
-* How to run the test suite
+# run rails server
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+# visit app locally
+http://localhost:3000/
 
-* Deployment instructions
+```
 
-* ...
+### Task
+
+Once you have this app installed, and you can use visit and interact with http://localhost:3000/
+Visit one of the images, eg http://localhost:3000/products/1 and notice the "Add to cart" button.
+The task is to get this button to function like a normal e-commerce "Add to cart" button.
+
+The button should have the following behavior:
+
+* Any guest can visit an image, and click the "Add to cart" button.
+* The cart modal (accessed by clicking the cart at the top right of the screen), should be populated by the product.
+  * note the `app/views/products/_cart_item.html.erb` partial can be used for product in the cart list if you wish.
+* The cart maintains any product that has been added to it. Wherever you visit, you can toggle the cart with the cart button, and all the products that have been added to the cart are there.
+* You can use whatever you deem necessary to create the cart, and maintain its state.
+* Once you are satisfied with your solution, push it to git and create a pull request.
+
+
+Good luck!
