@@ -10,7 +10,7 @@ class CartsController < ApplicationController
     flash[:success] = "Product '#{product.image}' added to cart!"
 
     redirect_to :products
-  rescue StandardError => e
+  rescue ActiveRecord::RecordInvalid => e
     flash[:error] = e.message
 
     redirect_to product_path(id: product.id)
