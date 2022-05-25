@@ -5,9 +5,9 @@
 <hr>
 
 <div>
-  <% @images.each do |id| %>
-    <%= link_to product_path(id) do %>
-      <%= image_tag Product.image(id), width: 144, height: 144 %>
+  <% @products.each do |product| %>
+    <%= link_to product_path(product.id) do %>
+      <%= image_tag product.image, width: 144, height: 144 %>
     <% end %>
   <% end %>
 </div>

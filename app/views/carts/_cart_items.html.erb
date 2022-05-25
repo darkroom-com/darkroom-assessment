@@ -1,0 +1,12 @@
+<div class="block">
+  <% if cart_products.present? %>
+    <% cart_products.each do |product| %>
+      <div class="flex">
+        <%= image_tag product.image, width: 70, height: 70 %>
+        <span><%= product.image %></span>
+      </div>
+    <% end %>
+  <% else %>
+    <span>Empty</span>
+  <% end %>
+</div>
