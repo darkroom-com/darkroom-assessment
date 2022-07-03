@@ -13,26 +13,32 @@ module Update
     private
 
     def delete_cart_item
-      context.product = Product.find(params[:product_id])
-      context.cart = Cart.find(params[:cart_id])
-      context.cart_item = ::CartItem.find_by(cart: context.cart, product: context.product)
-      
-      qtt_lower_or_equal_zero
+      qtt_lower_or_equal_one
       qtt_greater_than_one
     end
 
     def qtt_greater_than_one
-      if context.cart_item&.quantity > 1
-        context.cart_item.quantity -= 1
+      if cart_item && cart_item&.quantity > 1
+        cart_item.update(quantity: cart_item.quantity -= 1)
       end
-
-      context.cart_item.save
     end
 
-    def qtt_lower_or_equal_zero
-      if context.cart_item && context.cart_item&.quantity <= 0
-        context.cart_item.destroy
+    def qtt_lower_or_equal_one
+      if cart_item && cart_item&.quantity <= 1
+        cart.cart_items.find(cart_item.id).delete
       end
+    end
+
+    def product
+      context.product = Product.find(params[:product_id])
+    end
+    
+    def cart
+      context.cart = Cart.find(params[:cart_id])
+    end
+
+    def cart_item
+      context.cart_item = ::CartItem.find_by(cart: cart, product: product)
     end
   end
 end
