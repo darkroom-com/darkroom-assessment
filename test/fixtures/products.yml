@@ -1,0 +1,9 @@
+one:
+  id: 1
+  image: 'image-0.jpg'
+two:
+  id: 2
+  image: 'image-1.jpg'
+tree:
+  id: 3
+  image: 'image-2.jpg'

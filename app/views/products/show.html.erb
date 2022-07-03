@@ -1,6 +1,8 @@
 <%= render 'layouts/nav', { back: products_path } %>
 
-<h3><%= @image %></h3>
-<%= image_tag @image, style: 'width: 444px; height: 100%;', class: 'product-image' %>
-
-<%= button_tag 'Add to cart' %>
+<h3><%= @product.image %></h3>
+<%= image_tag @product.image, style: 'width: 444px; height: 100%;', class: 'product-image' %>
+<%= form_with url: cart_add_item_path, local: true do %>
+  <%= hidden_field_tag(:product_id, @product.id) %>
+  <%= button_tag 'Add to cart' %>
+<% end %>

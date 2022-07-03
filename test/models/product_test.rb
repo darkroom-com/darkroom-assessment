@@ -3,8 +3,9 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test '.image' do
-    image = Product.image(0)
-    assert image, 'image-1.jpg'
+  test "should save product" do
+    product = Product.new(image: 'teste-case.png')
+
+    assert product.save
   end
 end

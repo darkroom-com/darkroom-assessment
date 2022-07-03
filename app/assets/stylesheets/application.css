@@ -96,3 +96,19 @@ button {
   justify-content: space-between;
   border-bottom: .5px solid rgb(216,216,216);
 }
+
+#cart .display-block {
+  display: block;
+}
+
+#cart .display-flex {
+  display: flex;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}

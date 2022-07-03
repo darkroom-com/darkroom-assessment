@@ -2,10 +2,18 @@
 
 class ProductsController < ApplicationController
   def index
-    @images = Product::IMAGES.keys
+    @products = CacheService.new.read('products')
+
+    if(@products == nil)
+      @products = Product.all
+      CacheService.new.write('products', @products)
+      @products
+    else
+      @products
+    end
   end
 
   def show
-    @image = Product.image(params[:id])
+    @product ||= Product.find(params[:id])
   end
 end
