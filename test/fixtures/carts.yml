@@ -1,11 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  id: 1
+  guest_id: ee72f70967fb17b0201c2a02f4ea42a154cbde5add1a6bf4a92bd8fd8b8c8001
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+two:
+  id: 2
+  guest_id: 37d7a80604871e579850a658c7add2ae7557d0c6abcc9b31ecddc4424207eba3
